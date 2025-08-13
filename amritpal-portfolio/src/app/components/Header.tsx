@@ -8,10 +8,13 @@ const Header = () => {
     queryKey: ["bio"],
     queryFn: getBio,
   });
+  if(error){
+    return "Error"
+  }
   if(isLoading){
     return "Loading..."
   }
-  console.log(data);
+  console.log("Header data",data)
   return <div>Header</div>;
 };
 

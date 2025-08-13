@@ -5,6 +5,7 @@ import Bio from "./components/Bio";
 import Experience from "./components/Experience";
 import Skill from "./components/Skill";
 import Projects from "./components/Projects";
+import Education from "./components/Education";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
@@ -17,6 +18,7 @@ export default function Home() {
         <Bio />
         <Experience />
         <Skill />
+        <Education/>
         <Projects />
         <Footer />
       </div>

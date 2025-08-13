@@ -1,9 +1,20 @@
-import React from 'react'
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
+import { getBio } from "../services/bioService";
 
 function Bio() {
-  return (
-    <div>Bio</div>
-  )
+  const { error, data, isLoading } = useQuery({
+    queryKey: ["bio"],
+    queryFn: getBio,
+  });
+  if (error) {
+    return "Error";
+  }
+  if (isLoading) {
+    return "Loading...";
+  }
+  console.log("Header data", data);
+  return <div>Bio</div>;
 }
 
-export default Bio
+export default Bio;
